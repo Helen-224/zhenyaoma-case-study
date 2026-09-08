@@ -1,0 +1,5 @@
+.workbuddy/
+screenshots/node_modules/
+screenshots/
+assets/images/**/*.md
+assets/images/**/*.txt

@@ -1,0 +1,6 @@
+.product-principles{padding-top:clamp(82px,11vh,132px);padding-bottom:clamp(76px,10vh,116px)}
+.product-principles h2{max-width:780px;margin:0;font-size:clamp(46px,5.3vw,88px);line-height:.98}
+.principles-lead{max-width:610px;margin:26px 0 0;font-size:clamp(19px,1.65vw,27px);font-weight:700;line-height:1.42}
+.principles-grid{margin-top:clamp(54px,8vh,86px);gap:clamp(26px,4vw,58px)}.principles-grid article{padding-top:22px}.principles-grid small{font-size:clamp(13px,1.05vw,16px)}.principles-grid h3{margin:24px 0 16px;font-size:clamp(23px,2vw,34px);line-height:1.08}.principles-grid p{font-size:clamp(18px,1.45vw,23px);font-weight:600}
+.not-in-mvp{margin-top:clamp(52px,8vh,82px);padding-top:24px}.not-in-mvp small{font-size:clamp(13px,1.05vw,16px)}.not-in-mvp p{margin:14px 0;font-size:clamp(18px,1.45vw,23px);line-height:1.55}.not-in-mvp span{display:block;max-width:740px;font-size:clamp(16px,1.25vw,20px);line-height:1.6}
+@media(max-width:700px){.product-principles h2{font-size:clamp(42px,11vw,62px)}.principles-lead{font-size:19px}.principles-grid{margin-top:44px}.principles-grid h3{font-size:24px}.principles-grid p,.not-in-mvp p{font-size:18px}}

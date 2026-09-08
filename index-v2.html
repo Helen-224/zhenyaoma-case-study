@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="真要买吗 · Product Case Study V3" />
+    <title>真要买吗 · Product Case Study V3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="presentation.css" />
+    <link rel="stylesheet" href="presentation-v2-system.css" />
+    <link rel="stylesheet" href="phase3-pacing.css" />
+    <link rel="stylesheet" href="principles-emphasis.css" />
+    <link rel="stylesheet" href="live-data-clarity.css" />
+    <link rel="stylesheet" href="reflection-learning.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#hero" aria-label="回到首页">真要买吗 <span>PRODUCT CASE STUDY</span></a>
+      <p class="progress-label"><span class="progress-dot"></span> SCROLL TO EXPLORE</p>
+    </header>
+
+    <main>
+      <section class="slide hero" id="hero" data-section="00">
+        <div class="slide-index">00 / HERO</div>
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow">A BETTER WAY TO DECIDE</p>
+          <h1 class="hero-title">真要买吗<span>？</span></h1>
+          <p class="hero-claim">给冲动消费，<br />加一个暂停键。</p>
+          <p class="hero-prompt">买之前，<br />先问问朋友。</p>
+          <p class="hero-live"><span aria-hidden="true">●</span> LIVE PRODUCT · WECHAT MINI PROGRAM</p>
+          <p class="hero-description">一个把“想买东西”变成<br />“先听听朋友怎么说”的消费决策小程序。</p>
+          <p class="hero-responsibility">从产品定义、体验设计到上线与真实用户迭代，<br />我独立推进了这个产品的 MVP。</p>
+          <dl class="product-meta" aria-label="项目概况">
+            <div><dt>ROLE</dt><dd>Product / UX / AI Coding</dd></div>
+            <div><dt>TYPE</dt><dd>Independent Product</dd></div>
+            <div><dt>PLATFORM</dt><dd>WeChat Mini Program</dd></div>
+            <div><dt>STATUS</dt><dd>Live Product</dd></div>
+            <div><dt>SCOPE</dt><dd>0→1 MVP / Launch / User Iteration</dd></div>
+            <div><dt>DATA</dt><dd>4,789 Product Users · 4,358 Opinions</dd></div>
+          </dl>
+        </div>
+        <div class="phone-stage" aria-label="真要买吗产品手机界面占位图">
+          <!-- Replace the src below with the real product screenshot when it is ready. -->
+          <div class="phone-mockup">
+            <div class="phone-speaker" aria-hidden="true"></div>
+            <img class="phone-screen" src="assets/images/00_hero/hero_product_overview.jpg" alt="真要买吗小程序的购买申请详情与朋友意见界面" />
+          </div>
+        </div>
+        <a class="scroll-cue" href="#origin">NEXT / ORIGIN <i aria-hidden="true">↓</i></a>
+      </section>
+
+      <section class="slide origin" id="origin" data-section="01" aria-label="产品起点与真实用户行为">
+        <div class="origin-frame">
+          <div class="origin-heading">
+            <p class="eyebrow">01 / ORIGIN · FROM A REAL BEHAVIOR</p>
+            <h2>朋友转来的一篇帖子，<br />成了这个产品的起点。</h2>
+          </div>
+          <div class="origin-story">
+            <p class="origin-kicker">THE POST THAT STARTED IT</p>
+            <blockquote>《把想买的东西<br />发给朋友走审批》<br /><span>“你觉得我该买吗？”</span></blockquote>
+            <p class="origin-copy">我注意到一种已经存在的消费行为：当一个人看到想买、但又没有完全确定的东西时，有时会把商品链接发给熟悉自己的朋友，问一句：“你觉得值得买吗？”</p>
+            <div class="origin-observation"><small>OBSERVATION</small><p>这个行为本身已经存在。用户并不是缺少一个替自己做决定的人，而是在寻找一个外部视角。</p></div>
+            <p class="origin-question">我开始思考：如果把一次发生在聊天里的消费讨论，变成一个有开始、有反馈、有结果的结构化流程，会发生什么？</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide user-scenario" id="user-scenario" aria-label="产品出现以前的真实行为路径">
+        <div class="scenario-heading"><p class="eyebrow">BEFORE THE PRODUCT</p><h2>一次消费决定，<br />原本发生在聊天里。</h2></div>
+        <ol class="scenario-path"><li>看到一个想买的东西</li><li>有点心动，但又不完全确定</li><li>把链接发给朋友<br /><strong>“你觉得值得买吗？”</strong></li><li>朋友提供另一种意见</li><li>最后还是自己决定</li></ol>
+        <p class="scenario-conclusion">原来的行为已经存在。<br /><span>它散落在聊天中，没有留下完整的消费决策过程。</span></p>
+      </section>
+
+      <section class="slide problem" id="problem" data-section="02" aria-label="产品问题与目标用户">
+        <div class="slide-index">02 / PROBLEM</div>
+        <div class="problem-layout">
+          <div class="section-heading reveal"><p class="eyebrow">THE FRICTION</p><h2>想买的，<br />不一定值得买。</h2></div>
+          <div class="problem-narrative reveal"><div class="target-user-compact"><small>TARGET USER / DEFINED BY BEHAVIOR</small><p>那些已经产生购买欲，<br />但在真正付款之前，<br />仍愿意重新想一次的人。</p><span>我没有用年龄、职业或收入定义用户，而是用消费发生前的行为状态定义他们。</span></div><p class="problem-statement">在我观察到的这些场景里，真正的问题不是用户完全不知道要不要买。</p><p class="problem-support">从“有点心动”到“直接付款”之间，往往缺少一个主动停下来重新审视的时刻。<strong>缺的不是答案，而是一次暂停。</strong></p></div>
+          <div class="problem-paths reveal" aria-label="购买路径中的暂停"><div><small>PURCHASE MOMENT</small><p>产生购买欲<br /><span>↓</span><br />立刻付款</p></div><div class="problem-pause"><small>PAUSE</small><p>产生购买欲<br /><span>↓</span><br />停一下<br /><span>↓</span><br />听外部意见<br /><span>↓</span><br />重新思考<br /><span>↓</span><br />自己决定</p></div></div>
+        </div>
+      </section>
+
+      <section class="product-hypothesis" aria-label="产品假设"><div><p class="eyebrow">PRODUCT HYPOTHESIS</p><h2>如果付款之前，用户需要先把购买理由说出来，并听到一个来自朋友的外部视角，是否会更愿意重新审视这次消费？</h2></div><p>This was the hypothesis I wanted to test.<br /><span>这不是结论，而是我最初想验证的产品假设。</span></p></section>
+
+      <section class="slide insight" id="product-insight" data-section="03">
+        <div class="slide-index">03 / PRODUCT INSIGHT</div>
+        <div class="insight-layout">
+          <div class="section-heading reveal">
+            <p class="eyebrow">PRODUCT INSIGHT</p>
+            <h2>问题不是买不买。<br /><span>而是：</span><em>少了一次<br />停下来的机会。</em></h2>
+          </div>
+          <ol class="decision-path reveal" aria-label="真要买吗的购买决策路径">
+            <li>冲动消费</li>
+            <li class="decision-path-focus">「真要买吗？」</li>
+            <li>朋友反馈</li>
+            <li>重新思考</li>
+            <li>自己决定</li>
+          </ol>
+          <p class="insight-support">因此，我没有把产品设计成一个替用户判断“该不该买”的工具。它只负责创造一次：<strong>说明理由 → 获得外部视角 → 重新思考</strong>的机会。最终决定始终属于用户自己。</p>
+        </div>
+      </section>
+
+      <section class="product-principles" aria-label="产品原则与MVP取舍"><p class="eyebrow">PRODUCT PRINCIPLES</p><h2>第一版的取舍，<br />来自三个原则。</h2><p class="principles-lead">它们决定了 MVP 应该做什么，也决定了它不应该做什么。</p><div class="principles-grid"><article><small>01</small><h3>DON'T DECIDE FOR THE USER</h3><p>不替用户做决定</p></article><article><small>02</small><h3>CREATE A PAUSE</h3><p>在付款之前制造一次暂停</p></article><article><small>03</small><h3>BRING IN AN EXTERNAL VIEW</h3><p>让熟悉用户的人提供另一种视角</p></article></div><div class="not-in-mvp"><small>NOT IN THE MVP</small><p>不做 AI 自动判断“该不该买” · 不做强制消费限制 · 不做复杂预算管理 · 不替用户完成最终选择</p><span>第一版只验证一个核心假设：在付款前加入“说明 → 朋友反馈 → 再决定”，是否有人愿意使用。</span></div></section>
+
+      <section class="slide features cf-section" id="core-features" data-section="04">
+        <div class="slide-index">04 / MVP CORE FLOW</div>
+        <div class="core-intro"><p class="eyebrow">MVP CORE FLOW · THE FIRST VERSION</p>
+        <h2>把一次「我想买」，<br />变成一段可以被讨论的<br />决策过程。</h2>
+        <p>第一版，只验证一个核心行为。</p><div class="mvp-goal"><small>MVP GOAL</small><p>用户是否愿意在付款前，先把购买理由说出来，邀请朋友给意见，再完成自己的最终决定？</p></div></div>
+        <div class="cf-story"><div class="cf-steps">
+          <article class="cf-step is-active" data-cf-step="request">
+            <div class="cf-copy"><p class="cf-index">01 / EXPRESS</p><h3>把“我想买”<br />说清楚。</h3><p>先写下商品、价格和购买理由。</p><p class="cf-note">把一个模糊的「好想买」，变成一个可以被讨论的问题。</p></div>
+            <div class="cf-media-slot"><div class="cf-media" data-cf-media="request"><img src="assets/images/03_user_flow/b6791ab4877a82506c572b515c4a406e.jpg" alt="发起消费申请" draggable="false" /></div></div>
+          </article>
+          <article class="cf-step" data-cf-step="share">
+            <div class="cf-copy"><p class="cf-index">02 / ASK</p><h3>找一个熟悉你的人。</h3><p>把这次消费申请分享给朋友。</p><p class="cf-note">不是继续说服自己，而是主动引入一个外部视角。</p></div>
+            <div class="cf-media-slot"><div class="cf-media" data-cf-media="share"><img src="assets/images/03_user_flow/c48bcc72c080d3b9bbbfdf6fe718ee1a.jpg" alt="找谁帮我看看？" draggable="false" /></div></div>
+          </article>
+          <article class="cf-step" data-cf-step="feedback">
+            <div class="cf-copy"><p class="cf-index">03 / PERSPECTIVE</p><h3>听听朋友怎么说。</h3><p>朋友可以批准、驳回，或者建议冷静一下。</p><p class="cf-note">好友给出的，是消费意见，不是替用户完成最终决定。</p></div>
+            <div class="cf-media-slot"><div class="cf-media" data-cf-media="feedback"><img src="assets/images/03_user_flow/a7bc560933adbc1b9d3819447b130420.jpg" alt="听听朋友怎么说" draggable="false" /></div></div>
+          </article>
+          <article class="cf-step" data-cf-step="decision">
+            <div class="cf-copy"><p class="cf-index">04 / YOU DECIDE</p><h3>听完了，<br />最后还是你决定。</h3><p>选择「不买了」或「还是买了」。</p><p class="cf-note">产品负责制造一次暂停，但不拿走用户的决定权。</p></div>
+            <div class="cf-media-slot"><div class="cf-media" data-cf-media="decision"><div class="cf-carousel" tabindex="0" aria-label="最终决定截图，可用左右方向键或按钮切换">
+<div class="cf-track"><img src="assets/images/03_user_flow/01_multi_feedback_decision.jpg" alt="收到一条好友意见，底部显示不买了和还是买了" draggable="false" /><img src="assets/images/03_user_flow/a7bc560933adbc1b9d3819447b130420.jpg" alt="收到六条好友意见，底部显示不买了和还是买了" draggable="false" /></div>
+<div class="cf-controls"><button type="button" data-cf-direction="-1" aria-label="上一张">←</button><button type="button" data-cf-page="0" aria-label="一条好友意见" aria-current="true">01</button><span>/</span><button type="button" data-cf-page="1" aria-label="多条好友意见" aria-current="false">02</button><button type="button" data-cf-direction="1" aria-label="下一张">→</button></div></div></div></div>
+          </article>
+        </div><div class="cf-device" aria-label="Core Flow 真实产品界面"><div class="cf-phone"></div></div></div><p class="core-flow-summary">EXPRESS <span>↓</span> ASK <span>↓</span> REFLECT <span>↓</span> DECIDE</p>
+      </section>
+
+      <section class="slide launch" id="launch" data-section="04" aria-label="产品上线过程">
+        <div class="slide-index">04 / LAUNCH</div>
+        <p class="eyebrow">FROM AN IDEA TO REAL USE</p>
+        <h2>第一版上线之后，<br />产品才真正开始接受验证。</h2>
+        <ol class="launch-path" aria-label="产品上线过程"><li>独立完成 MVP</li><li>微信小程序正式上线</li><li>获得真实用户</li><li>建立用户反馈群</li><li>持续迭代</li></ol>
+        <p class="launch-note">上线之前，很多产品判断都只是我的假设。真正的变化发生在用户开始使用以后：一些原本看起来合理的设计，在真实场景中暴露出了新的问题。</p>
+      </section>
+
+      <section class="feedback-loop" aria-label="真实用户反馈闭环"><p class="eyebrow">REAL USER FEEDBACK LOOP</p><p>发布版本 <span>↓</span> 真实用户使用 <span>↓</span> 反馈 / 行为异常 <span>↓</span> 重新定义问题 <span>↓</span> 修改产品 <span>↓</span> 再次验证</p></section>
+
+      <section class="slide hypothesis-bridge" id="hypothesis-to-use" aria-label="从产品假设到真实使用">
+        <div class="hypothesis-copy"><p class="eyebrow">FROM HYPOTHESIS TO REAL USE</p><h2>如果把“你觉得我该买吗？”<br />结构化，<br /><em>真的会有人使用吗？</em></h2><p>我没有停在概念验证。</p><p class="hypothesis-path">独立完成 MVP → 微信小程序上线 → 获得真实用户 → 建立反馈群 → 持续迭代</p></div>
+        <div class="hypothesis-data" aria-label="2026年9月7日产品数据快照"><p><strong>4,789</strong><span>Product Users</span></p><p><strong>2,043</strong><span>消费申请</span></p><p><strong>4,358</strong><span>真实意见</span></p><small>DATA SNAPSHOT<br />2026.09.07</small></div>
+      </section>
+
+      <section class="slide wallet-transition" aria-label="从一次朋友反馈到长期钱包小组">
+        <div class="wallet-transition-copy">
+          <p class="eyebrow">FROM ONE-OFF TO ONGOING</p>
+          <h2>一个人犹豫，<br />一群人帮你冷静。</h2>
+          <p>一开始，产品解决的是一次性的消费犹豫。<br />但真实使用里，很多人并不是只问一次朋友。</p>
+          <p>他们会反复问同一群熟人：<br />这个要不要买？有没有平替？这次该不该忍住？</p>
+          <p class="wallet-transition-accent">于是，一次性朋友反馈，<br />开始延伸成固定熟人长期参与的钱包小组。</p>
+        </div>
+        <div class="wallet-comparison" aria-label="一次性朋友反馈与钱包小组对照">
+          <div><p>一次性朋友反馈</p><ol><li>发起一次申请</li><li>分享给朋友</li><li>收到几条反馈</li><li>做出决定</li></ol></div>
+          <div><p>钱包小组</p><ol><li>先有固定熟人关系</li><li>下次直接在组里发起</li><li>多人持续参与</li><li>形成长期记录</li></ol></div>
+        </div>
+      </section>
+
+      <section class="slide wallet-groups" id="wallet-groups" data-section="07" aria-label="钱包小组功能介绍">
+        <p class="wallet-section-label">06 / WALLET GROUP</p>
+        <div class="wallet-groups-frame">
+          <div class="wallet-groups-copy">
+            <article class="wallet-step is-active" data-wallet-step="0">
+              <p class="wallet-label">WHY WALLET GROUP</p>
+              <h2>不是每次都<br />重新找人。</h2>
+              <p>当用户一次次把消费申请发给同一群朋友时，<br />产品就不再只是“一次找人帮我看看”，<br />而是逐渐形成了一种长期存在的消费决策关系。</p>
+              <p class="wallet-note">钱包小组不是更多人替你决定，<br />而是把“下次再问谁”这件事固定下来。</p>
+            </article>
+
+            <article class="wallet-step" data-wallet-step="1">
+              <p class="wallet-step-index">01 / FIX THE PEOPLE</p>
+              <h3>先把“劝你的人”<br />固定下来。</h3>
+              <p>创建或加入钱包小组，<br />把那些本来就会互相劝消费的熟人留在同一个地方。<br /><br />这样下一次犹豫时，<br />不用重新找人、重新解释、重新建立上下文。</p>
+              <p class="wallet-note">从一次分享，变成固定关系。</p>
+            </article>
+
+            <article class="wallet-step" data-wallet-step="2">
+              <p class="wallet-step-index">02 / ASK INSIDE THE GROUP</p>
+              <h3>下次想买，<br />他们还在。</h3>
+              <p>进入小组后，用户可以直接在这个关系里<br />继续发起新的消费申请。<br /><br />“帮我看看”不再是临时分享，<br />而变成一种长期存在的协作方式。</p>
+              <p class="wallet-note">不是重新邀请一遍朋友，<br />而是在已有关系里继续发起。</p>
+            </article>
+
+            <article class="wallet-step" data-wallet-step="3">
+              <p class="wallet-step-index">03 / ONGOING PARTICIPATION</p>
+              <h3>它不会在一次决定后<br />立刻消失。</h3>
+              <p>成员不仅能持续看到新的消费申请，<br />也能看到这个月的花钱状态、最近发生的记录。<br /><br />这不再只是一次审批，<br />而是一段长期存在的消费协作关系。</p>
+              <p class="wallet-note">一次求助，变成持续参与。</p>
+            </article>
+
+            <article class="wallet-step" data-wallet-step="4">
+              <p class="wallet-step-index">04 / YOU STILL DECIDE</p>
+              <h3>大家都能劝，<br />但最后还是你决定。</h3>
+              <p>小组成员会从不同角度给出意见：<br />可以买、别买、再忍忍。<br /><br />朋友提供外部视角，<br />最终决定仍然属于申请人自己。</p>
+              <p class="wallet-note">多人参与，不等于替你做决定。</p>
+            </article>
+          </div>
+
+          <div class="wallet-device" aria-label="钱包小组真实小程序界面">
+            <div class="wallet-phone">
+              <img class="wallet-screen is-active" data-wallet-screen="list" src="assets/images/04_core_features/03_wallet_group/e02c445a59967309f0c21b3f0525c913.jpg" alt="我的钱包小组列表页面" />
+              <img class="wallet-screen" data-wallet-screen="detail" src="assets/images/04_core_features/03_wallet_group/5139fb54db0a0a5d4b2ff8469e7d7e0a.jpg" alt="钱包小组详情与等待审批列表" />
+              <img class="wallet-screen" data-wallet-screen="invite" src="assets/images/04_core_features/03_wallet_group/4fe6ce30d86f65387b8d9eaa59c6b767.jpg" alt="邀请好友加入钱包小组弹层" />
+              <img class="wallet-screen" data-wallet-screen="create" src="assets/images/04_core_features/03_wallet_group/dedc222c07b279ccd42de1aa700e2509.jpg" alt="已选择钱包小组的消费申请页面" />
+              <img class="wallet-screen" data-wallet-screen="pending" src="assets/images/04_core_features/03_wallet_group/82c0a706ff922840f0bd4e4f704a885b.jpg" alt="钱包小组等待审批列表" />
+              <img class="wallet-screen" data-wallet-screen="activity" src="assets/images/04_core_features/03_wallet_group/97c0caf3ef484fa42ef0a5d05d8ccbd1.jpg" alt="钱包小组月度状态与最近记录" />
+              <img class="wallet-screen" data-wallet-screen="approval" src="assets/images/04_core_features/03_wallet_group/ba0db023d80d6939342f077f3a2898fe.jpg" alt="小组审批页面，包含买吧、别买和再忍忍" />
+            </div>
+            <p class="wallet-media-caption" aria-live="polite">我的钱包小组</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide feedback user-driven-iteration" id="real-user-feedback" data-section="05" aria-label="真实用户驱动的产品迭代">
+        <div class="feedback-intro">
+          <p class="eyebrow">05 / USER-DRIVEN ITERATION</p>
+          <h2>产品不是上线以后<br />才完成。</h2>
+          <p class="feedback-intro-lead">它是在被使用以后，<br /><em>才开始变得具体。</em></p>
+          <p>MVP 上线后，我建立了真实用户反馈渠道。我没有直接把每一条反馈当成需求：先判断用户真正遇到的问题、它是否影响核心流程，以及是否值得进入下一次迭代。</p>
+          <div class="how-prioritized"><small>HOW I PRIORITIZED</small><p><b>CORE FLOW IMPACT</b> 是否影响完成一次消费决策？　<b>FREQUENCY</b> 是否被反复遇到？　<b>USER VALUE</b> 是否改善理解、参与或决策体验？　<b>COST / RISK</b> 现在解决是否值得、是否破坏原有逻辑？</p><span>不是所有反馈都会直接变成功能。</span></div>
+        </div>
+
+        <div class="feedback-story">
+          <div class="feedback-media" aria-live="polite">
+            <img class="feedback-media-image is-active" data-feedback-media="0" src="assets/images/06_real_user_feedback/case_01_history_visibility/02_history_record_need.jpg" alt="用户讨论决定后其他人无法继续审批，以及未结束时能否看到其他评论" loading="lazy" />
+            <img class="feedback-media-image" data-feedback-media="1" src="assets/images/06_real_user_feedback/case_02_shared_opinions/01_shared_opinions_need.jpg" alt="用户提出不审批的人也需要查看其他人的意见" loading="lazy" />
+            <img class="feedback-media-image" data-feedback-media="2" src="assets/images/06_real_user_feedback/case_03_image_preview_bug/01_image_preview_bug.jpg" alt="用户反馈消费申请中的商品图片无法点击预览" loading="lazy" />
+            <p class="feedback-media-caption">CASE 01 · HISTORY &amp; VISIBILITY</p>
+          </div>
+
+          <div class="feedback-cases">
+            <article class="feedback-case is-active" data-feedback-case="0" data-feedback-caption="CASE 01 · HISTORY &amp; VISIBILITY">
+              <img class="feedback-mobile-image" src="assets/images/06_real_user_feedback/case_01_history_visibility/02_history_record_need.jpg" alt="决定后申请与评论查看问题的真实群聊" loading="lazy" />
+              <p class="feedback-case-number">CASE 01 · DECISION DOESN'T END THE STORY</p>
+              <h3>决定之后，<br />这条申请就结束了吗？</h3>
+              <blockquote>“没结束也能看到其他人的评论吗？”</blockquote>
+              <div class="feedback-analysis"><section><small>USER SAID</small><p>“决定以后，这条申请就结束了吗？”</p></section><section><small>WHAT I FOUND</small><p>用户还想回看商品信息、朋友意见和最终决定。</p></section><section><small>PRODUCT JUDGEMENT</small><p>消费决定不是一次性动作，而是一段有回顾价值的过程。</p></section><section><small>WHAT CHANGED</small><p>增加历史记录；完成后的申请仍可查看商品信息、朋友意见和最终决定。</p></section></div>
+              <p class="feedback-highlight">从“完成一次审批”，<br />变成“留下一个决策记录”。</p>
+            </article>
+
+            <article class="feedback-case" data-feedback-case="1" data-feedback-caption="CASE 02 · VIEW BEFORE ACTING">
+              <img class="feedback-mobile-image" src="assets/images/06_real_user_feedback/case_02_shared_opinions/01_shared_opinions_need.jpg" alt="不审批也希望查看其他意见的真实群聊" loading="lazy" />
+              <p class="feedback-case-number">CASE 02 · VIEWING ≠ VOTING</p>
+              <h3>想看看大家怎么说，<br />不代表我现在就想表态。</h3>
+              <blockquote>“不审核的人也能看到其他人提的意见。”</blockquote>
+              <div class="feedback-analysis"><section><small>USER SAID</small><p>我不一定要马上表态，但我想先理解这里正在发生什么。</p></section><section><small>WHAT I FOUND</small><p>原来的设计把“查看意见”和“参与审批”绑定在一起。但参与讨论，并不等于必须立即表态。</p></section><section><small>PRODUCT JUDGEMENT</small><p>“查看”和“做决定”应该是两个不同动作。</p></section><section><small>WHAT CHANGED</small><p>重新整理待审批、查看大家意见与历史记录之间的关系，让用户不需要完成审批，也能理解当前讨论。</p></section></div>
+              <p class="feedback-highlight">查看 → 理解 → 参与讨论 → 最终决定。<br />不是所有进入页面的人，都需要立即做决定。</p>
+            </article>
+
+            <article class="feedback-case" data-feedback-case="2" data-feedback-caption="CASE 03 · IMAGE PREVIEW">
+              <img class="feedback-mobile-image" src="assets/images/06_real_user_feedback/case_03_image_preview_bug/01_image_preview_bug.jpg" alt="商品图片无法点开的真实群聊" loading="lazy" />
+              <p class="feedback-case-number">OTHER USABILITY IMPROVEMENTS</p>
+              <h3>让判断所需的信息，<br />真正可被使用。</h3>
+              <div class="feedback-analysis"><section><small>IMAGE PREVIEW</small><p>修复商品图片无法打开的问题。</p></section><section><small>PRODUCT INFORMATION</small><p>优化商品信息展示，让朋友可以在判断前看清必要信息。</p></section></div>
+            </article>
+          </div>
+        </div>
+        <p class="iteration-next">这些反馈修正了单次消费申请的体验。<br /><small>NEXT · FROM ONE-OFF TO ONGOING</small></p>
+      </section>
+
+      <section class="slide live-product-data" id="live-product-data" data-section="07" aria-label="线上产品真实使用数据">
+        <div class="live-product-frame">
+          <article class="live-state live-state-users is-active" data-live-state="0">
+            <p class="live-label">01 / REAL USE</p>
+            <p class="eyebrow">REAL PRODUCT · REAL BEHAVIOR</p>
+            <h2>它真的被用起来了。</h2>
+            <p class="live-date">截至 2026.09.07</p>
+            <div class="live-number-sequence" aria-label="产品真实使用数据">
+              <p><strong class="live-count" data-count="4789">4,789</strong><span>累计业务用户</span></p>
+              <p><strong class="live-count" data-count="2043">2,043</strong><span>消费申请</span></p>
+              <p><strong class="live-count" data-count="4358">4,358</strong><span>真实用户意见</span></p>
+            </div>
+            <p class="live-real-use-note">用户不只是进入了产品。他们真的发起了消费申请，也真的有人参与这些消费决定。</p>
+          </article>
+
+          <article class="live-state live-state-pause" data-live-state="1">
+            <p class="live-backdrop" aria-hidden="true">NO BUY</p>
+            <p class="live-label">02 / FINAL DECISION</p>
+            <div class="pause-editorial-grid">
+              <div class="pause-statement"><h2>比用户数更重要的，<br />是他们最后做了什么决定。</h2><strong class="live-count live-count-pause" data-count="40.5" data-suffix="%">40.5%</strong><p>最终选择「不买了」</p></div>
+              <div class="pause-detail"><p class="pause-context">在已经完成最终决定的<br /><strong>682</strong> 笔申请中，<br /><strong>276</strong> 笔最终选择「不买了」。</p><div class="pause-comparison" aria-label="最终决定的对照数据"><p><strong>276</strong><span>不买了<br />40.5%</span></p><p><strong>406</strong><span>还是买了<br />59.5%</span></p></div><p class="data-note"><small>DATA NOTE</small>40.5% 表示：在已完成最终决定的申请中，有 40.5% 最终选择了“不买了”。它不能单独证明这一结果完全由产品造成。</p></div>
+            </div>
+            <p class="pause-thesis">产品的目标从来不是让所有人都“不买”。而是让最终选择，发生在一次重新思考之后。</p>
+          </article>
+
+          <article class="live-state live-state-groups" data-live-state="2">
+            <p class="live-backdrop" aria-hidden="true">GROUPS</p>
+            <p class="live-label">03 / WALLET GROUP ADOPTION</p>
+            <h2>从一次求助，<br />到持续参与。</h2>
+            <p class="live-copy">从一次性的好友分享，开始出现固定关系下的持续参与。</p>
+            <div class="group-number-sequence" aria-label="钱包小组真实使用数据">
+              <p><strong class="live-count" data-count="658">658</strong><span>钱包小组</span></p>
+              <p><strong class="live-count" data-count="1768">1,768</strong><span>小组参与用户</span></p>
+              <p><strong class="live-count" data-count="1008">1,008</strong><span>小组消费咨询</span></p>
+              <p><strong class="live-count" data-count="2121">2,121</strong><span>小组真实意见</span></p>
+            </div>
+            <p class="early-signal"><small>EARLY SIGNAL</small>这些数据说明 Wallet Group 已经产生真实使用；长期留存和重复参与，仍需要继续通过更长周期的数据验证。</p>
+          </article>
+        </div>
+        <p class="live-data-source">Data snapshot · 2026.09.07<br />Source: WeChat Mini Program / Tencent CloudBase production database · 线上业务数据库汇总</p>
+      </section>
+
+      <section class="slide reflection" id="testing-reflection" data-section="08">
+        <div class="slide-index">08 / REFLECTION</div>
+        <div class="section-heading reveal"><p class="eyebrow">WHAT I LEARNED</p><h2>做完这个产品以后，<br /><em>我更清楚哪些问题还没被回答。</em></h2></div>
+        <div class="reflection-grid reveal"><article><small>01 / WHAT I LEARNED</small><h3>用户反馈不等于需求。</h3><p>真实用户说出来的往往只是表面问题；需要继续判断用户真正卡在哪里，以及该改功能还是产品结构。</p><h3>好的迭代，不是不断加功能。</h3><p>MVP 到 Wallet Group 的变化来自新的使用模式，而不是“想多做一点”。</p><h3>真实数据比漂亮的故事更重要。</h3><p>上线以后，才开始区分什么已经发生，什么只是我希望发生。</p></article><article><small>02 / WHAT HAS BEEN VALIDATED</small><p class="reflection-intro">目前已有真实产品行为支持：</p><ul><li>用户愿意发起消费申请</li><li>朋友愿意参与消费讨论</li><li>用户会完成自己的最终决定</li><li>Wallet Group 已产生真实创建、参与与意见行为</li></ul></article></div>
+        <div class="reflection-unknown"><small>03 / WHAT IS STILL UNKNOWN</small><div><article><h3>用户会不会重复回来使用？</h3><p>还需要重复使用率、回访周期与再次发起申请比例。</p></article><article><h3>Wallet Group 是否真的形成长期关系？</h3><p>还不知道同一小组是否持续活跃、成员是否重复参与。</p></article><article><h3>40.5% 的“不买了”有多少来自产品影响？</h3><p>目前只能确认结果，不能证明没有产品时用户原本一定会购买。</p></article></div></div>
+        <div class="reflection-next"><small>04 / WHAT I WOULD TEST NEXT</small><ol><li><b>REPEAT USE</b><span>重复发起申请用户占比、第二次使用间隔、用户生命周期</span></li><li><b>RESPONSE SPEED</b><span>发起申请到第一条反馈的时间，以及等待是否造成流失</span></li><li><b>WALLET GROUP RETENTION</b><span>小组重复申请数、活跃周期、重复参与成员比例</span></li><li><b>DECISION QUALITY</b><span>通过决定后反馈、用户自评或访谈理解是否帮助重新思考</span></li></ol><p class="product-question">我下一步真正想知道的不是：<br />有多少人打开了这个产品。<br /><em>而是他们会不会在下一次犹豫时，再次回来。</em></p><p class="reflection-close">每一个结论，都等待下一次验证。<br />这些问题还没有答案。所以，这个产品还值得继续被使用。</p></div>
+        <a class="back-top" href="#hero">BACK TO TOP ↑</a>
+      </section>
+
+      <section class="slide try-it" id="try-it" data-section="09" aria-label="体验真要买吗微信小程序">
+        <div class="try-it-copy"><p class="try-it-label">09 / TRY IT</p><h2>现在，<br />你也可以亲自试试看。</h2><p class="try-it-lead">《真要买吗》微信小程序已经正式上线。</p><p class="try-it-description">发起一笔消费申请，邀请朋友帮你看看。<br />看看下一次准备付款之前，会不会多一次重新想想的机会。</p><ul class="try-it-actions" aria-label="体验方式"><li>发起消费申请</li><li>邀请朋友帮你看看</li><li>加入 / 创建钱包小组</li></ul></div>
+        <div class="try-it-qr-wrap"><div class="try-it-qr-card"><div class="try-it-qr-image"><img src="./assets/images/99_optional/zhenyaoma_miniprogram_qr.jpg" alt="真要买吗微信小程序二维码" onerror="this.hidden=true;this.parentElement.classList.add('is-missing');" /><span>QR CODE</span></div><p>扫码体验「真要买吗」</p><small>微信小程序 · 可直接体验</small></div><p class="try-it-note">买不买，<br />先问问自己，<br />也问问重要的人。</p></div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="presentation.js"></script>
+  </body>
+</html>
