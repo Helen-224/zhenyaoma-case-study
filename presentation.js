@@ -1,3 +1,48 @@
+/* Navigation remains functional even when animation libraries or motion are disabled. */
+(() => {
+  const links = [...document.querySelectorAll('.case-nav a')];
+  const targets = links.map((link) => document.querySelector(link.getAttribute('href')));
+  const header = document.querySelector('.site-header');
+  let ticking = false;
+  const settleAnchor = (target, replace = false) => {
+    if (!target) return;
+    const hash = `#${target.id}`;
+    history[replace ? 'replaceState' : 'pushState'](null, '', hash);
+    const align = () => {
+      const headerHeight = header ? header.getBoundingClientRect().height : 0;
+      const delta = target.getBoundingClientRect().top - headerHeight - 20;
+      if (Math.abs(delta) > 1) window.scrollTo({ top: window.scrollY + delta, behavior: 'auto' });
+    };
+    align();
+    [0, 120, 320].forEach((delay) => window.setTimeout(align, delay));
+  };
+  links.forEach((link, index) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      settleAnchor(targets[index]);
+    });
+  });
+  const update = () => {
+    let active = -1;
+    targets.forEach((target, index) => {
+      if (target && target.getBoundingClientRect().top <= window.innerHeight * 0.35) active = index;
+    });
+    links.forEach((link, index) => {
+      if (index === active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  window.addEventListener('load', () => {
+    if (location.hash) settleAnchor(document.querySelector(location.hash), true);
+  }, { once: true });
+  update();
+})();
+
 /* V2 presentation layer: content.js remains untouched and can populate [data-content-slot] later. */
 (() => {
   if (!window.gsap || !window.ScrollTrigger) return;
@@ -8,14 +53,6 @@
   if (reducedMotion) return;
   document.documentElement.classList.add('has-gsap');
 
-  // Keep the product timeline chronological: feedback-led iteration precedes wallet groups.
-  const feedbackSection = document.querySelector('#real-user-feedback');
-  const walletTransition = document.querySelector('.wallet-transition');
-  const walletSection = document.querySelector('#wallet-groups');
-  if (feedbackSection && walletTransition && walletSection) {
-    feedbackSection.after(walletTransition, walletSection);
-  }
-
   const heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
   heroTimeline
     .from('.hero-eyebrow', { autoAlpha: 0, y: 16, duration: 0.5 })
@@ -23,13 +60,14 @@
     .from('.hero-claim', { autoAlpha: 0, y: 24, duration: 0.65 }, '>-0.18')
     .from('.hero-prompt', { autoAlpha: 0, y: 18, duration: 0.55 }, '>-0.16')
     .from('.hero-description', { autoAlpha: 0, y: 18, duration: 0.6 }, '>-0.16')
+    .from('.hero-qr', { autoAlpha: 0, y: 18, duration: 0.55 }, '>-0.18')
     .from('.phone-stage', { autoAlpha: 0, x: 72, y: 24, scale: 0.97, rotate: 2, duration: 0.9 }, '<0.05')
     .call(() => gsap.to('.phone-mockup', { y: -8, duration: 2.6, ease: 'sine.inOut', yoyo: true, repeat: -1 }));
 
   // Core Flow is initialized independently below, including reduced-motion support.
 
   const originSection = document.querySelector('.origin');
-  if (originSection && originSection.querySelector('.origin-scene') && window.matchMedia('(min-width: 701px)').matches) {
+  if (originSection && window.matchMedia('(min-width: 701px)').matches) {
     const originScenes = gsap.utils.toArray('.origin-scene', originSection);
     let activeOriginScene = -1;
     const setOriginScene = (index, immediate = false) => {
@@ -64,11 +102,6 @@
     });
   });
   if (scenarioItems[0]) scenarioItems[0].classList.add('is-active');
-
-  // Keep the early case-study argument readable: reveal one thought at a time.
-  gsap.utils.toArray('.origin-story > .origin-copy, .origin-observation, .origin-question, .target-user-compact, .problem-statement, .problem-support, .problem-paths > div').forEach((element) => {
-    gsap.from(element, { autoAlpha: 0, y: 28, duration: 0.55, ease: 'power3.out', scrollTrigger: { trigger: element, start: 'top 84%', once: true } });
-  });
 
   const walletGroupsSection = document.querySelector('.wallet-groups');
   if (walletGroupsSection) {
@@ -122,7 +155,7 @@
     ScrollTrigger.create({
       trigger: walletFrame,
       start: 'top top',
-      end: '+=420%',
+      end: '+=700%',
       pin: true,
       pinSpacing: true,
       invalidateOnRefresh: true,
@@ -130,6 +163,7 @@
       anticipatePin: 1,
       onEnter: () => gsap.set(walletFrame, { autoAlpha: 1 }),
       onEnterBack: () => gsap.set(walletFrame, { autoAlpha: 1 }),
+      onLeave: () => gsap.set(walletFrame, { autoAlpha: 0 }),
       onUpdate: (self) => setWalletScene(Math.min(walletScenes.length - 1, Math.floor(self.progress * walletScenes.length)))
     });
   }
@@ -137,14 +171,14 @@
   const feedbackStory = document.querySelector('.feedback-story');
   if (feedbackStory && window.matchMedia('(min-width: 701px)').matches) {
     const feedbackCases = gsap.utils.toArray('.feedback-case', feedbackStory);
-    const feedbackMedia = gsap.utils.toArray('.feedback-media-image', feedbackStory);
+    const feedbackMedia = gsap.utils.toArray('[data-feedback-media]', feedbackStory);
     const feedbackCaption = feedbackStory.querySelector('.feedback-media-caption');
     let activeFeedbackCase = -1;
     const setFeedbackCase = (index, immediate = false) => {
       if (index === activeFeedbackCase && !immediate) return;
       feedbackCases.forEach((item, itemIndex) => item.classList.toggle('is-active', itemIndex === index));
-      feedbackMedia.forEach((image, imageIndex) => {
-        const isActive = imageIndex === index;
+      feedbackMedia.forEach((image) => {
+        const isActive = Number(image.dataset.feedbackMedia) === index;
         image.classList.toggle('is-active', isActive);
         if (isActive) gsap.fromTo(image, { autoAlpha: 0, scale: 0.97, y: 14 }, { autoAlpha: 1, scale: 1, y: 0, duration: immediate ? 0 : 0.5, ease: 'power3.out', overwrite: true });
         else gsap.to(image, { autoAlpha: 0, scale: 0.97, y: -12, duration: immediate ? 0 : 0.4, ease: 'power2.in', overwrite: true });
@@ -160,9 +194,6 @@
         end: 'bottom 42%',
         onEnter: () => setFeedbackCase(index),
         onEnterBack: () => setFeedbackCase(index)
-      });
-      gsap.utils.toArray('.feedback-analysis section', item).forEach((section) => {
-        gsap.from(section, { autoAlpha: 0, y: 22, duration: 0.48, ease: 'power3.out', scrollTrigger: { trigger: section, start: 'top 84%', once: true } });
       });
     });
     setFeedbackCase(0, true);
@@ -231,14 +262,14 @@
     ScrollTrigger.create({
       trigger: liveFrame,
       start: 'top top',
-      end: '+=260%',
+      end: '+=360%',
       pin: true,
       pinSpacing: true,
       invalidateOnRefresh: true,
       scrub: 0.8,
       anticipatePin: 1,
       onUpdate: (self) => {
-        setLiveState(Math.min(2, Math.floor(self.progress * 3)));
+        setLiveState(Math.min(3, Math.floor(self.progress * 4)));
         updateLiveMetrics(self.progress);
       }
     });
@@ -270,17 +301,6 @@
     });
   });
 
-  const siteHeader = document.querySelector('.site-header');
-  const heroSection = document.querySelector('.hero');
-  if (siteHeader && heroSection) {
-    ScrollTrigger.create({
-      trigger: heroSection,
-      start: 'bottom 88%',
-      onEnter: () => siteHeader.classList.add('is-hero-past'),
-      onLeaveBack: () => siteHeader.classList.remove('is-hero-past')
-    });
-  }
-
   gsap.utils.toArray('.slide').forEach((section) => {
     ScrollTrigger.create({
       trigger: section,
@@ -288,6 +308,46 @@
       end: 'bottom 55%',
       onToggle: ({ isActive }) => section.classList.toggle('is-current', isActive)
     });
+  });
+})();
+
+/* Direct feedback evidence: one full-height image at a time, with an optional calm auto-advance. */
+(() => {
+  const carousels = [...document.querySelectorAll('.direct-feedback-carousel')];
+  if (!carousels.length) return;
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  carousels.forEach((carousel) => {
+    const slides = [...carousel.querySelectorAll('[data-direct-feedback-slide]')];
+    const buttons = [...carousel.querySelectorAll('[data-direct-feedback-page]')];
+    let page = 0;
+    let timer;
+    const show = (index) => {
+      page = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        const active = i === page;
+        slide.classList.toggle('is-active', active);
+        slide.setAttribute('aria-hidden', String(!active));
+      });
+      buttons.forEach((button) => button.setAttribute('aria-current', String(Number(button.dataset.directFeedbackPage) === page)));
+    };
+    const stop = () => clearInterval(timer);
+    const start = () => {
+      stop();
+      if (!reduceMotion.matches) timer = setInterval(() => show(page + 1), 4600);
+    };
+    buttons.forEach((button) => button.addEventListener('click', () => { show(Number(button.dataset.directFeedbackPage)); start(); }));
+    carousel.addEventListener('keydown', (event) => {
+      if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+      event.preventDefault();
+      show(page + (event.key === 'ArrowRight' ? 1 : -1));
+      start();
+    });
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+    carousel.addEventListener('focusin', stop);
+    carousel.addEventListener('focusout', start);
+    show(0);
+    start();
   });
 })();
 
@@ -333,3 +393,4 @@
  window.addEventListener('pageshow',()=>{if(root.classList.contains('cf-desktop'))sync(true);});
  slide(0);setup();
 })();
+
