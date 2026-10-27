@@ -45,4 +45,3 @@ section[id] { scroll-margin-top:70px; }
 .square-caveat { max-width:850px; margin:0; color:#4a5151; font-size:13px; line-height:1.6; }
 @media(max-width:900px) { .site-header { flex-wrap:wrap; gap:0; padding:8px 20px; }.case-nav { width:100%; overflow-x:auto; overscroll-behavior-x:contain; scrollbar-width:thin; }.case-nav a { min-height:38px; }.square-intro { grid-template-columns:1fr; }.square-journey { gap:22px; }.square-evidence strong { font-size:clamp(34px,5.5vw,60px); } }
 @media(max-width:700px) { .site-header .brand span { display:inline; }.case-nav { gap:22px; }.square-story { padding:125px 24px 78px; gap:32px; }.square-intro h2 { font-size:clamp(42px,10vw,62px); }.square-journey,.square-evidence { grid-template-columns:1fr; gap:24px; }.square-evidence p { border-top:1px solid rgba(23,18,15,.3); padding-top:14px; }.square-evidence strong { min-width:140px; }.square-caveat { font-size:13px; } section[id] { scroll-margin-top:100px; } }
-
