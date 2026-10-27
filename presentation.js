@@ -393,4 +393,3 @@
  window.addEventListener('pageshow',()=>{if(root.classList.contains('cf-desktop'))sync(true);});
  slide(0);setup();
 })();
-
